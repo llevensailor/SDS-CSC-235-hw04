@@ -1,0 +1,10 @@
+1. My two specific analysis tasks are identify any outliers in 
+the sleep and anxiety scatterplot and comment on the differences or lack there of 
+between genders on the average bar graph. 
+
+2. I asked my friend to complete these tasks. She said she liked the ability to turn on 
+and off the regression line. The part that confused her was the fact that the bar graph wasn't 
+labeled so initailly she could not tell which bar represented what. The user has to hover over to see what 
+the bar represents. 
+
+3. I added a legend for the bar graph to show which color means what!
