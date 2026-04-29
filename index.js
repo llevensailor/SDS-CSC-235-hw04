@@ -67,7 +67,7 @@ frame1.append("g")
 frame1.append("text")
         .attr("transform", "translate(" + (vizWidth / 2) + "," + (vizHeight + margin / 2) + ")")
         .style("text-anchor", "middle")
-        .text("Anxiety Score");
+        .text("Anxiety Score (0 - 10 Scale)");
 
 frame1.append("g").call(yAxis);
 
@@ -76,14 +76,14 @@ frame1.append("text")
         .attr("x", -vizHeight / 2)
         .attr("y", -margin / 2)
         .style("text-anchor", "middle")
-        .text("Hours of Sleep");
+        .text("Sleep Quality (0 - 10 Scale)");
 
 frame1.append("text")
         .attr("id", "plotTitle")
         .attr("x", vizWidth /2)
         .attr("y", "-50" )
         .attr("text-anchor", "middle")
-        .text("Anxiety vs. Sleep Hours by Student");
+        .text("Anxiety vs. Sleep Score by Student");
 
 frame2.append("text")
         .attr("id", "averageTitle")
@@ -121,6 +121,23 @@ frame1.selectAll("circle")
         .on("mouseout", function() {
         hoverText.style("opacity", 0);
         });
+// added legend for the bars 
+var genderKeys = [...new Set(data.map(d=> d.gender))];
+var scatterLegend = frame1.append("g")
+        .attr("transform", "translate(" + vizWidth +", 0)");
+
+genderKeys.forEach((gender, i) => {
+        scatterLegend.append("circle")
+            .attr("cx", 6)
+            .attr("cy", i * 20 + 6)
+            .attr("r", 6)
+            .attr("fill", genderScale(gender));
+        scatterLegend.append("text")
+            .attr("x", 18)
+            .attr("y", i * 20 + 10)
+            .style("font-size", "12px")
+            .text(gender);
+    });
 
 //Regression Line Interactive
 function linearRegression(pts) {
@@ -248,7 +265,7 @@ frame2.append("g")
         barLegend.append("text")
             .attr("x", 18)
             .attr("y", i * 20 + 10)
-            .style("front-size", "12px")
+            .style("font-size", "12px")
             .text(key.charAt(0).toUpperCase() + key.slice(1) + " Avg");
 });
 

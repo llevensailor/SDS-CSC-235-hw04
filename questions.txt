@@ -1,6 +1,5 @@
-1. My two specific analysis tasks are identify any outliers in 
-the sleep and anxiety scatterplot and comment on the differences or lack there of 
-between genders on the average bar graph. 
+1. My two specific analysis tasks are identify if there is a relationship between hours of sleep and level of anxiety, and are there differences in gender relationships with 
+anxiety and sleep scores. 
 
 2. I asked my friend to complete these tasks. She said she liked the ability to turn on 
 and off the regression line. The part that confused her was the fact that the bar graph wasn't 
